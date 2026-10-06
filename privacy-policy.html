@@ -32,7 +32,7 @@
     <h2>Who is responsible</h2>
     <p>The data controller is <strong>Michael Ganchas</strong>, an individual in Portugal. Portugal is in the European Union, so the GDPR applies.</p>
     <p>Contact: <a class="inline" href="mailto:mapcrumbs.contact@gmail.com">mapcrumbs.contact@gmail.com</a>.</p>
-    <p>There is no separate data-protection officer. Write to that address for privacy requests, including access, export, and deletion. To delete an account, you can also use the <a class="inline" href="delete-account.html">account deletion page</a>.</p>
+    <p>There is no separate data-protection officer. Write to that address for privacy requests, including access and export. To delete an account, use the delete option in the app’s settings or profile, or follow the <a class="inline" href="delete-account.html">account deletion page</a>.</p>
 
     <h2>Account and identity</h2>
     <p>The app signs you in with Firebase Authentication when it opens. The first session is anonymous, so a diary can be saved before you add a login. You can also sign in with Google, email, phone, or Sign in with Apple on iOS.</p>
@@ -66,7 +66,7 @@
       <li><strong>Photo library.</strong> Used when you attach an existing photo.</li>
       <li><strong>Notifications.</strong> If you allow them, Firebase Cloud Messaging stores a push token for your install so the app can send a notification. Turn notifications off in system settings to stop that.</li>
     </ul>
-    <p>The iOS App Store privacy details for version 7.0.1 also list <strong>Contacts</strong> as data that may be collected and linked to you for app functionality. We could not confirm in source code whether the app reads your address book, or only lets you pick a person while sharing. There is no contacts database in the diary store we inspected. Do not assume your whole address book is uploaded. If a share screen asks for contacts, that access is for the share you are making.</p>
+    <p>The app does not ask for access to your contacts, and it does not read or upload your address book.</p>
 
     <h2>Private sharing, crew, and backup</h2>
     <p>You can share a Crumb, a city, or a trip with a private link. The link is not a public profile. The link itself carries a preview so the recipient can see what was shared: for a Crumb or a city, that can include the name, area, map coordinates, an optional note, and an optional display name. Anyone who has the link can read that preview. Send it only to people you trust. If you share a journey invite, the link can also carry an id for that invite.</p>
@@ -78,9 +78,14 @@
     <p>Read their policy at <a class="inline" href="https://liteapi.travel/privacy/" target="_blank" rel="noopener">liteapi.travel/privacy</a>.</p>
 
     <h2>Advertising</h2>
-    <p>The iOS App Store listing says MapCrumbs contains advertising. The Android app includes the Google AdMob software and the advertising-id permission. We could not confirm from the app source whether a person using the current version is actually shown an ad.</p>
-    <p>If you see an ad, Google may process an advertising identifier, IP address, and similar device data to choose and measure that ad, under <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a> and <a class="inline" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob’s policies</a>. Your notes, photos, and city list are not sold to advertisers. You can reset or delete the advertising id in Android settings, and you can refuse tracking when iOS asks.</p>
-    <p>If you do not see ads, this section only means that advertising software is in the app package. It is not a statement that an ad was shown to you.</p>
+    <p>The app shows ads with <strong>Google AdMob</strong>. AdMob can use your device’s advertising ID (IDFA on iOS, the advertising ID on Android), your IP address, and similar technical data to choose an ad, limit how often you see it, measure it, and reduce fraud. Your notes, photos, and city list are not sold to advertisers and are not used as the profile for those ads.</p>
+    <p><strong>Personalized ads</strong> use the advertising ID to pick ads from your interests and activity across apps. <strong>Non-personalized ads</strong> are not based on that kind of profile. They can still use context, such as coarse location, and Google may still use the advertising ID to cap frequency, to produce aggregated reports, and to fight fraud. See <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a> and <a class="inline" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob’s policies</a>.</p>
+    <p>In the European Economic Area, the United Kingdom, and Switzerland, where a consent choice is required, the app asks through Google’s User Messaging Platform (UMP) before it uses the advertising ID for personalized ads. If you agree, ads can be personalized. If you refuse, ads are requested as non-personalized. You can change that choice when the consent message is shown again.</p>
+    <p>You can also opt out on the device. Menu names vary slightly by version.</p>
+    <ul>
+      <li><strong>iPhone:</strong> Settings → Privacy &amp; Security → Tracking, then turn off tracking for MapCrumbs, or turn off “Allow Apps to Request to Track”. The advertising ID is then unavailable and ads are not personalized.</li>
+      <li><strong>Android:</strong> Settings → Privacy → Ads, then delete the advertising ID or opt out of ad personalization. A deleted advertising ID is sent as zeros, and ads are not personalized.</li>
+    </ul>
 
     <h2>Diagnostics, analytics, and app configuration</h2>
     <p>We use these Google Firebase services, and Sentry, to run and improve the app:</p>
@@ -109,7 +114,7 @@
     <ul>
       <li><strong>Contract (Article 6(1)(b)).</strong> Providing the diary you ask for: account, cities, Crumbs, notes, photos, sync, private share links, notifications you allow, and a hotel booking you request.</li>
       <li><strong>Legitimate interests (Article 6(1)(f)).</strong> Keeping the app reliable and secure (crash reports, App Check, abuse prevention) and understanding which features are used. These interests are overridden where your privacy should come first. You can object. Where analytics or advertising identifiers need consent under ePrivacy rules, we do not treat legitimate interests as a substitute for that consent.</li>
-      <li><strong>Consent (Article 6(1)(a)).</strong> Device permissions you grant (location, camera, photos, notifications, and contacts if a screen asks). You can withdraw a permission in system settings. If an advertising or analytics prompt is shown, the choice you make there is the consent for that prompt. We could not confirm that the current build shows a separate consent form.</li>
+      <li><strong>Consent (Article 6(1)(a), and ePrivacy rules for identifiers on the device).</strong> Device permissions you grant (location, camera, photos, notifications). Personalized ads, and storing or reading the advertising ID where consent is required, rely on the choice you make in Google’s UMP message. You can withdraw that choice when the message is shown again, and you can opt out in device ad settings. Refusing personalization does not turn ads off; it switches them to non-personalized ads.</li>
       <li><strong>Legal obligation (Article 6(1)(c)).</strong> Keeping hotel booking records where tax, accounting, or a legal claim requires it.</li>
     </ul>
 
@@ -143,7 +148,7 @@
     </ul>
     <p>Email <a class="inline" href="mailto:mapcrumbs.contact@gmail.com">mapcrumbs.contact@gmail.com</a> from the email on the account, or include your user id. We may need to confirm that the request is yours. We reply within one month, unless the request is complex, in which case the GDPR allows an extension and we will tell you.</p>
     <p>You can also complain to the Portuguese supervisory authority, the Comissão Nacional de Proteção de Dados (<a class="inline" href="https://www.cnpd.pt/" target="_blank" rel="noopener">cnpd.pt</a>), or to the authority where you live.</p>
-    <p>You can edit or delete individual cities, Crumbs, notes, and photos in the app. That does not close the account. Account closure is the deletion page.</p>
+    <p>You can edit or delete individual cities, Crumbs, notes, and photos in the app. That does not close the account. To close it, use delete account in the app’s settings or profile. The <a class="inline" href="delete-account.html">deletion page</a> also explains how to ask by email.</p>
 
     <h2>Children</h2>
     <p>MapCrumbs is a general travel diary. It is not directed at children under 13, or under 16 in the European Economic Area. We do not knowingly collect personal data from those children. If you are a parent or guardian and you believe a child has given us personal data, email us and we will delete it.</p>
