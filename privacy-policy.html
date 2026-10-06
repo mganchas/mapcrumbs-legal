@@ -17,60 +17,157 @@
   <a href="index.html">Home</a>
   <a href="privacy-policy.html" class="active">Privacy Policy</a>
   <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+  <a href="delete-account.html">Delete account</a>
 </nav>
 
 <main>
   <div class="card">
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: December 31, 2021</p>
+    <p class="meta">Effective date: 6 October 2026</p>
 
-    <p>Michael Ganchas built the MapCrumbs app as an ad-supported app. This service is provided by Michael Ganchas at no cost and is intended for use as is.</p>
+    <p>This policy explains what MapCrumbs does with personal data. It applies to the mobile app <strong>MapCrumbs - Travel Diary</strong> (iOS, and Android on Google Play as <strong>app.mapcrumbs</strong>) and to the private share links the app creates.</p>
 
-    <p>This page informs visitors regarding policies on the collection, use, and disclosure of Personal Information for anyone who uses the service. If you choose to use MapCrumbs, you agree to the collection and use of information in relation to this policy. Personal information collected is used for providing and improving the service. Information will not be used or shared with anyone except as described in this Privacy Policy.</p>
+    <p>The app is a free travel diary. You can mark cities you have visited, save favourite spots as Crumbs, add notes and photos, look back at a timeline, and share a trip or a map with a private link. There is no public feed.</p>
 
-    <h2>Information Collection and Use</h2>
-    <p>For a better experience while using the service, certain personally identifiable information may be requested. The information requested will be retained on your device and is not collected directly. The app uses third-party services that may collect information used to identify you.</p>
+    <h2>Who is responsible</h2>
+    <p>The data controller is <strong>Michael Ganchas</strong>, an individual in Portugal. Portugal is in the European Union, so the GDPR applies.</p>
+    <p>Contact: <a class="inline" href="mailto:mapcrumbs.contact@gmail.com">mapcrumbs.contact@gmail.com</a>.</p>
+    <p>There is no separate data-protection officer. Write to that address for privacy requests, including access and export. To delete an account, use the delete option in the app’s settings or profile, or follow the <a class="inline" href="delete-account.html">account deletion page</a>.</p>
 
-    <p>Third-party service providers used by the app:</p>
+    <h2>Account and identity</h2>
+    <p>The app signs you in with Firebase Authentication when it opens. The first session is anonymous, so a diary can be saved before you add a login. You can also sign in with Google, email, phone, or Sign in with Apple on iOS.</p>
+    <p>Depending on the method you use, Firebase stores:</p>
     <ul>
-      <li><a class="inline" href="https://www.google.com/policies/privacy/" target="_blank" rel="noopener">Google Play Services</a></li>
+      <li>a user id</li>
+      <li>email address, if you use email or Google, or if Apple provides one (Apple can provide a private relay address)</li>
+      <li>phone number, if you use phone sign-in</li>
+      <li>the name and profile photo from your Google account, if you use Google</li>
+    </ul>
+    <p>We use this to tell your diary apart from other people’s, to keep you signed in, and to answer a support or deletion request. We do not use a separate MapCrumbs password store for Google, Apple, or phone sign-in. Those providers check the login.</p>
+
+    <h2>Diary content</h2>
+    <p>When you use the diary, we store what you save, against your user id:</p>
+    <ul>
+      <li>cities you have visited or marked, including city name, country, map coordinates, visit dates, and notes</li>
+      <li>Crumbs (saved places): name, category, coordinates, notes, whether you marked it as a favourite, and similar place details you enter</li>
+      <li>photos you attach to a Crumb or a city visit, and metadata such as size and order (the store listing allows up to 10 photos on each)</li>
+      <li>categories you create</li>
+      <li>suggestions computed from your map, such as a traveller profile stored on your account</li>
+    </ul>
+    <p>A saved place can also include a phone number for that place, if one is stored with it. That is the place’s number, not your account phone number.</p>
+    <p>City and place records, visit notes, and photo metadata are stored in Supabase. Photo files you upload are stored in cloud file storage. We have confirmed user-photo files in Supabase Storage. The app is also set up to use Firebase Storage; treat both as places a photo may live until a deletion request removes the copies we can find.</p>
+    <p>The app also uses Cloud Firestore and Cloud Functions for account and app features that are not in the Supabase diary tables (for example sign-in support and other account data). We could not re-read the app source while writing this policy, so this page does not invent a field-by-field list for Firestore.</p>
+
+    <h2>Location, camera, photos, and notifications</h2>
+    <p>The app asks for these device permissions. You can refuse them. Refusing a permission limits the feature that needs it. The operating system, not MapCrumbs, shows the permission prompt.</p>
+    <ul>
+      <li><strong>Precise and approximate location.</strong> Used while you are using the app, to show where you are and to help you save a place. We do not describe background location tracking. Turn location off in system settings at any time.</li>
+      <li><strong>Camera.</strong> Used when you take a photo for a Crumb or a visit.</li>
+      <li><strong>Photo library.</strong> Used when you attach an existing photo.</li>
+      <li><strong>Notifications.</strong> If you allow them, Firebase Cloud Messaging stores a push token for your install so the app can send a notification. Turn notifications off in system settings to stop that.</li>
+    </ul>
+    <p>The app does not ask for access to your contacts, and it does not read or upload your address book.</p>
+
+    <h2>Private sharing, crew, and backup</h2>
+    <p>You can share a Crumb, a city, or a trip with a private link. The link is not a public profile. The link itself carries a preview so the recipient can see what was shared: for a Crumb or a city, that can include the name, area, map coordinates, an optional note, and an optional display name. Anyone who has the link can read that preview. Send it only to people you trust. If you share a journey invite, the link can also carry an id for that invite.</p>
+    <p>The app may also let you back up your diary, or share a trip with a crew of people you choose. We could not find separate crew or backup tables in the diary database. If you use those features, they use the diary content you include, for the people you invite or for the restore you ask for. They do not publish you to a public feed.</p>
+
+    <h2>Hotel search and booking</h2>
+    <p>Hotel search and booking is provided by <strong>Nuitée Travel Limited</strong> (LiteAPI), a company in Ireland. When you book, LiteAPI receives the guest name and email address needed to make the reservation, and the stay details (hotel, dates, and price).</p>
+    <p>We keep a booking record on your account: hotel, city, dates, status, price, and confirmation details. The MapCrumbs booking table has no column for a card number. The booking partner processes payment. We do not sell hotel bookings as advertising.</p>
+    <p>Read their policy at <a class="inline" href="https://liteapi.travel/privacy/" target="_blank" rel="noopener">liteapi.travel/privacy</a>.</p>
+
+    <h2>Advertising</h2>
+    <p>The app shows ads with <strong>Google AdMob</strong>. AdMob can use your device’s advertising ID (IDFA on iOS, the advertising ID on Android), your IP address, and similar technical data to choose an ad, limit how often you see it, measure it, and reduce fraud. Your notes, photos, and city list are not sold to advertisers and are not used as the profile for those ads.</p>
+    <p><strong>Personalized ads</strong> use the advertising ID to pick ads from your interests and activity across apps. <strong>Non-personalized ads</strong> are not based on that kind of profile. They can still use context, such as coarse location, and Google may still use the advertising ID to cap frequency, to produce aggregated reports, and to fight fraud. See <a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a> and <a class="inline" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob’s policies</a>.</p>
+    <p>In the European Economic Area, the United Kingdom, and Switzerland, where a consent choice is required, the app asks through Google’s User Messaging Platform (UMP) before it uses the advertising ID for personalized ads. If you agree, ads can be personalized. If you refuse, ads are requested as non-personalized. You can change that choice when the consent message is shown again.</p>
+    <p>You can also opt out on the device. Menu names vary slightly by version.</p>
+    <ul>
+      <li><strong>iPhone:</strong> Settings → Privacy &amp; Security → Tracking, then turn off tracking for MapCrumbs, or turn off “Allow Apps to Request to Track”. The advertising ID is then unavailable and ads are not personalized.</li>
+      <li><strong>Android:</strong> Settings → Privacy → Ads, then delete the advertising ID or opt out of ad personalization. A deleted advertising ID is sent as zeros, and ads are not personalized.</li>
     </ul>
 
-    <h2>Log Data</h2>
-    <p>Whenever you use the service, in the case of an error, data and information may be collected (through third-party products) from your device, referred to as Log Data. This may include your device's Internet Protocol (IP) address, device name, operating system version, app configuration, time and date of use, and other statistics.</p>
-
-    <h2>Cookies</h2>
-    <p>This service does not use cookies explicitly. However, the app may use third-party code and libraries that use cookies to collect information and improve their services. You may accept or refuse cookies. Refusing cookies may limit some portions of the service.</p>
-
-    <h2>Service Providers</h2>
-    <p>Third-party companies and individuals may be employed for the following reasons:</p>
+    <h2>Diagnostics, analytics, and app configuration</h2>
+    <p>We use these Google Firebase services, and Sentry, to run and improve the app:</p>
     <ul>
-      <li>To facilitate the service</li>
-      <li>To provide the service on our behalf</li>
-      <li>To perform service-related functions</li>
-      <li>To assist in analysing how the service is used</li>
+      <li><strong>Firebase Analytics</strong> — to see which parts of the app are used, in aggregate. This can include an app instance id and device data.</li>
+      <li><strong>Firebase Remote Config</strong> — to deliver app settings to an install.</li>
+      <li><strong>Firebase App Check</strong> — to make it harder for unauthorised clients to call the backend. This uses an attestation from Apple or Google, not your diary.</li>
+      <li><strong>Sentry</strong> — for crash and error reports. A report can include device model, operating system, app version, and an error trace. It is not meant to include your diary notes or photos. We could not re-check whether a report also includes an IP address or user id.</li>
     </ul>
-    <p>These third parties have access to your Personal Information solely to perform tasks assigned on our behalf and are obligated not to disclose or use it for any other purpose.</p>
+    <p>Google Maps is used to show the map. Use of the map sends technical data such as coordinates you ask the map to display to Google, under Google’s privacy policy.</p>
+    <p>City descriptions and spoken city stories in the catalogue are about the place, not your account. Preparing that catalogue has used DeepSeek, Google (including Gemini and WaveNet text-to-speech), and Qwen. Those jobs are not your private diary.</p>
+
+    <h2>Who we share data with</h2>
+    <p>We do not sell your personal data. We share it with processors who host or support the app, and with a booking partner when you book a hotel. Each processor is limited to the job described here. Their own policies apply as well.</p>
+    <ul>
+      <li><a class="inline" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> — covers Firebase Authentication, Firestore, Cloud Functions, Cloud Storage, Analytics, Remote Config, Cloud Messaging, App Check, Google Maps, and AdMob. See also <a class="inline" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy and security</a>.</li>
+      <li><a class="inline" href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase privacy policy</a> — diary records (places, city visits, photo metadata) and related files. The MapCrumbs database project is hosted in London, United Kingdom (eu-west-2).</li>
+      <li><a class="inline" href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry privacy policy</a> — crash and error reports.</li>
+      <li><a class="inline" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple privacy policy</a> — Sign in with Apple, and Apple push or device checks when you use an iPhone.</li>
+      <li><a class="inline" href="https://liteapi.travel/privacy/" target="_blank" rel="noopener">Nuitée Travel Limited (LiteAPI)</a> — hotel search and booking, including guest name and email when you book.</li>
+    </ul>
+    <p>A private share link is a disclosure you make by sending the link. We do not control what the recipient does with it.</p>
+    <p>We may also disclose data if the law requires it, or to protect you, other people, or the service against abuse or a legal claim.</p>
+
+    <h2>Why we are allowed to do this (GDPR)</h2>
+    <ul>
+      <li><strong>Contract (Article 6(1)(b)).</strong> Providing the diary you ask for: account, cities, Crumbs, notes, photos, sync, private share links, notifications you allow, and a hotel booking you request.</li>
+      <li><strong>Legitimate interests (Article 6(1)(f)).</strong> Keeping the app reliable and secure (crash reports, App Check, abuse prevention) and understanding which features are used. These interests are overridden where your privacy should come first. You can object. Where analytics or advertising identifiers need consent under ePrivacy rules, we do not treat legitimate interests as a substitute for that consent.</li>
+      <li><strong>Consent (Article 6(1)(a), and ePrivacy rules for identifiers on the device).</strong> Device permissions you grant (location, camera, photos, notifications). Personalized ads, and storing or reading the advertising ID where consent is required, rely on the choice you make in Google’s UMP message. You can withdraw that choice when the message is shown again, and you can opt out in device ad settings. Refusing personalization does not turn ads off; it switches them to non-personalized ads.</li>
+      <li><strong>Legal obligation (Article 6(1)(c)).</strong> Keeping hotel booking records where tax, accounting, or a legal claim requires it.</li>
+    </ul>
+
+    <h2>How long we keep it</h2>
+    <p>We keep account and diary data for as long as the account exists. When you delete the account, or we verify a deletion email, we delete that data from active systems without undue delay and aim to finish within 30 days.</p>
+    <p>Exceptions:</p>
+    <ul>
+      <li><strong>Hotel booking records</strong> are kept after account deletion so a stay, cancellation, refund, dispute, or tax and accounting duty can still be handled. In Portugal, accounting records of a paid transaction are generally kept for up to 10 years. We have not found an automatic purge of these rows, so that is the outside period we will apply.</li>
+      <li><strong>Backups</strong> held by the hosting providers can keep a residual copy until the backup expires. We do not use backup copies to run the app after a deletion.</li>
+      <li><strong>Crash reports</strong> already sent to Sentry are deleted if we can match them to you. A report that has no user id may remain until Sentry’s own retention removes it.</li>
+      <li><strong>A share link you already sent</strong> cannot be pulled back from someone else’s device.</li>
+      <li><strong>Catalogue content</strong> about a city (stock photos, city stories, map reference data) is not your account and is not deleted when you delete yours.</li>
+    </ul>
+    <p>Anonymous accounts are covered on the <a class="inline" href="delete-account.html">deletion page</a>. Uninstalling the app removes it from the device. It does not, by itself, erase diary data already stored under that anonymous user id.</p>
+
+    <h2>International transfers</h2>
+    <p>Michael Ganchas is in Portugal. The Supabase project that holds the diary database is in London, United Kingdom. The European Commission has adopted an adequacy decision for the United Kingdom.</p>
+    <p>Google (Firebase, Maps, and AdMob), Sentry, and Apple can process data in the United States and in other countries where they operate. Nuitée Travel Limited processes booking data in Ireland, and its own providers may be elsewhere. Where a country does not have an adequacy decision, those companies state that they use Standard Contractual Clauses or equivalent safeguards. We did not re-check a signed copy of each contract while writing this page.</p>
+    <p>We could not find a second Supabase project in the United States. We also could not confirm the Google Cloud region used by Firebase.</p>
+
+    <h2>Your rights</h2>
+    <p>If the GDPR applies to you, you can ask us to:</p>
+    <ul>
+      <li><strong>Access</strong> the personal data we hold about you</li>
+      <li><strong>Correct</strong> data that is wrong</li>
+      <li><strong>Delete</strong> it, including by the steps on the <a class="inline" href="delete-account.html">account deletion page</a></li>
+      <li><strong>Export</strong> a copy in a common format (data portability)</li>
+      <li><strong>Restrict</strong> processing in the cases the GDPR allows</li>
+      <li><strong>Object</strong> to processing based on legitimate interests</li>
+      <li><strong>Withdraw consent</strong> where processing was based on consent, without affecting processing that happened before the withdrawal</li>
+    </ul>
+    <p>Email <a class="inline" href="mailto:mapcrumbs.contact@gmail.com">mapcrumbs.contact@gmail.com</a> from the email on the account, or include your user id. We may need to confirm that the request is yours. We reply within one month, unless the request is complex, in which case the GDPR allows an extension and we will tell you.</p>
+    <p>You can also complain to the Portuguese supervisory authority, the Comissão Nacional de Proteção de Dados (<a class="inline" href="https://www.cnpd.pt/" target="_blank" rel="noopener">cnpd.pt</a>), or to the authority where you live.</p>
+    <p>You can edit or delete individual cities, Crumbs, notes, and photos in the app. That does not close the account. To close it, use delete account in the app’s settings or profile. The <a class="inline" href="delete-account.html">deletion page</a> also explains how to ask by email.</p>
+
+    <h2>Children</h2>
+    <p>MapCrumbs is a general travel diary. It is not directed at children under 13, or under 16 in the European Economic Area. We do not knowingly collect personal data from those children. If you are a parent or guardian and you believe a child has given us personal data, email us and we will delete it.</p>
 
     <h2>Security</h2>
-    <p>Your trust in providing Personal Information is valued, and commercially acceptable means are used to protect it. However, no method of transmission over the internet or electronic storage is 100% secure, and absolute security cannot be guaranteed.</p>
+    <p>Diary data is sent over encrypted connections. Supabase and Google encrypt stored data at rest. Access to your account depends on Firebase Authentication. Firebase App Check is used to reduce calls from clients that are not the real app. No online service can promise perfect security. If we learn of a breach that puts your data at serious risk, we will notify the people and the authority the GDPR requires us to notify.</p>
+    <p>Some photo files are stored in buckets that are marked public, which means someone who already has the file address can open the image. The app does not publish a directory of those files. A private share link is only as private as the people who receive it.</p>
 
-    <h2>Links to Other Sites</h2>
-    <p>This service may contain links to other sites. If you click a third-party link, you will be directed to that site. These external sites are not operated by MapCrumbs. You are strongly advised to review the Privacy Policy of any websites you visit. There is no control over and no responsibility for the content, privacy policies, or practices of third-party sites or services.</p>
+    <h2>Changes</h2>
+    <p>If this policy changes, the new version will be posted on this page with a new effective date. For a change that needs consent, we will ask for it.</p>
 
-    <h2>Children's Privacy</h2>
-    <p>This service does not address anyone under the age of 13. Personally identifiable information is not knowingly collected from children under 13. If a child under 13 is discovered to have provided personal information, it will be immediately deleted. If you are a parent or guardian and are aware your child has provided personal information, please contact us so that necessary action can be taken.</p>
-
-    <h2>Changes to This Privacy Policy</h2>
-    <p>This Privacy Policy may be updated from time to time. You are advised to review this page periodically for any changes. Changes are effective immediately after being posted on this page.</p>
-
-    <h2>Contact Us</h2>
-    <p>If you have any questions or suggestions about this Privacy Policy, please contact us at <a class="inline" href="mailto:mapcrumbs.contact@gmail.com">mapcrumbs.contact@gmail.com</a>.</p>
+    <h2>Contact</h2>
+    <p>Michael Ganchas · <a class="inline" href="mailto:mapcrumbs.contact@gmail.com">mapcrumbs.contact@gmail.com</a></p>
+    <p><a class="inline" href="delete-account.html">Delete your MapCrumbs account and data</a></p>
   </div>
 </main>
 
 <footer>
-  <p>© 2026 MapCrumbs · <a href="mailto:mapcrumbs.contact@gmail.com">mapcrumbs.contact@gmail.com</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="terms-and-conditions.html">Terms &amp; Conditions</a></p>
+  <p>© 2026 MapCrumbs · <a href="mailto:mapcrumbs.contact@gmail.com">mapcrumbs.contact@gmail.com</a> · <a href="privacy-policy.html">Privacy Policy</a> · <a href="delete-account.html">Delete account</a> · <a href="terms-and-conditions.html">Terms &amp; Conditions</a></p>
 </footer>
 
 </body>
